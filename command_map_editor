@@ -1,0 +1,12 @@
+move object : arrow
+up : +
+down : -
+change object : 1 or 2
+change texture : [ or ]
+change rotation : < or >
+display list : r
+set and save map : b
+place mesh : left click
+delete mesh : right click
+activate hitbox : l
+activate visibility : i

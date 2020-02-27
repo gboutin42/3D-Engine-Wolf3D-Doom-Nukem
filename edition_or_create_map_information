@@ -1,0 +1,52 @@
+For modify or create map without the Level Editor, you're need this information:
+
+In first you must create a file with .map extension.
+
+In the file you must at least create a player and after you can create different objet or item and you will not be able to have more of 250 meshs:
+
+you need set the TYPE MESH PRIMITIVE NAME (cube, plane or item) or if you want use a OBJ "# + obj path"
+after you must do set the mesh NAME with char*
+then COORD with 3 float (x, y, z)
+then the SIZE with 3 float (x, y, z)
+then the TEXTURE path with "/ressources/assets/textures/my_texture.png" or if you don't want texture you can set to NULL
+then the GRAVITY with 1 float
+then the ROTATION with 3 float (x, y, z)
+then the COLOR with 4 float (r, g, b, a) in case if you're set the texture path at NULL
+and then the HP of your mesh with 1 int, if you want your mesh to be indestructible set the hp at -1 and for the item the hp correspond to the type of ammo
+and optional you can set if you don't want HITBOX for go through the mesh with # and set the VISIBILITY on "off" with * at the end of line
+and all that on one line
+
+examples:
+plane: plane -40.0 0.0 -40.0 20.0 0.0 20.0 ressources/assets/textures/metal_f.png 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0    -1
+cube: wall 50.0 0.0 50.0 -100.0 100.0 100.0 ressources/assets/textures/iron.png 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0    -1 *
+cube: Enemy -28.20 1.00 24.60 0.30 0.50 0.30 ressources/assets/textures/enemy.png 0.00 0.00 0.00 0.00 1.00 1.00 1.00 1.00 50
+cube: ladder 3.60 4.00 15.20 0.20 4.00 0.05 ressources/assets/textures/echelle.png 0.00 0.00 90.00 0.00 1.00 1.00 1.00 1.00 -1
+item: Ammo_Pack_11 -5.80 20.00 11.10 0.20 0.05 0.20 ressources/assets/textures/shotgun.png 0.00 0.00 0.00 0.00 1.00 1.00 1.00 1.00 -4
+item: Ammo_Pack_13 -14.50 1.10 22.00 0.20 0.05 0.20 ressources/assets/textures/ar.png 0.00 0.00 0.00 0.00 1.00 1.00 1.00 1.00 -2
+item: Ammo_Pack_14 -7.40 1.10 14.00 0.20 0.05 0.20 ressources/assets/textures/rifle.png 0.00 0.00 0.00 0.00 1.00 1.00 1.00 1.00 -3
+item: Armor_Pack_12 5.60 0.00 21.00 0.20 0.05 0.20 ressources/assets/textures/armor.png 0.00 0.00 0.00 0.00 1.00 1.00 1.00 1.00 -1
+#ressources/objets/1Entree.obj ressources/objets/1Entree.obj 0.50 1.00 5.00 1.00 1.00 1.00 ressources/assets/textures/map.png 0.00 0.00 0.00 0.00 1.00 1.00 1.00 1.00 -1
+
+
+for the player:
+the TYPE MESH PRIMITIVE NAME must set at player and the name at Player
+then set COORD with 3 float (x, y, z)
+then set the SIZE with 3 float (x, y, z)
+then set the TEXTURE path with "/ressources/assets/textures/my_texture.png" or if you don't want texture you can set to NULL
+then set the GRAVITY with 1 float
+then set the ROTATION with 3 float (x, y, z)
+then set the COLOR with 4 float (r, g, b, a) in case if you're set the texture path at NULL
+then set the HP player with 1 int between 1 and 100
+then set ARMOR with 1 int between 1 and 100
+then set the FUEL for your jet pack with 1 int between 0 and 150
+and you must set the start ammo with 2 int, the first is for the ammo in your weapon and the second is for your ammo in reserve, the order is:
+	- gun
+	- ar
+	- rifle
+	- shotgun
+	- rpg
+and the end you set the cards for open the doors with wich you want to start with 3 int (red, blue, green)
+and all that on one line
+
+example:
+player: Player -4.10 0.00 10.90 0.30 0.50 0.30 NULL 100.00 0.00 0.00 0.00 1.00 1.00 1.00 1.0 100 0 0 15 15 0 0 0 0 0 0 0 0 1 1 1
